@@ -10,7 +10,9 @@ public class CameraFollow : MonoBehaviour {
     public float sensitivity = 5.0f;
     private float dist;
     public float radiusOfSatisfaction = 0.1f;
+    public float speed = 5.0f;
     public Vector3 targetPos;
+    public Collider col;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +22,6 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-
-        // TODO move camera closer to player if view is obscured, and back to default distance if player is visible
-
         // DONE basic camera movement
         {
             //Rotates camera to look at player
@@ -41,40 +40,53 @@ public class CameraFollow : MonoBehaviour {
             }
         }
 
+        //Move camera closer or away from player
+        AdjustDistance();
+
+    }
+
+    void AdjustDistance() {
+
         // Adjust camera distance to ensure player is in view
         RaycastHit hit;
-
+        
         Ray playerLOS = new Ray(trans.position, targetPos - trans.position);
         Debug.DrawRay(trans.position, lookDir, Color.red);
 
-        Debug.DrawRay(trans.position, -trans.forward, Color.green);
+        Debug.DrawRay(trans.position + trans.forward, -trans.forward, Color.green);
+
         if (Physics.Raycast(playerLOS, out hit))
         {
             if (hit.collider.tag == "CameraTarget")
             {
-                Debug.Log("variable dist = " + dist);
-                Debug.Log("dist compared with = " + Vector3.Distance(trans.position, targetPos));
-                //Debug.Log("Can see player");
+                Debug.Log("Can see player");
+                Debug.Log("Front looking at :" + hit.collider.name);
+
+                //Debug.Log("Cam position: " + trans.position);
+                //Debug.Log("Slightly in front of cam: " + (trans.position + trans.forward));
 
                 // Set Raycast firing backwards from camera to determine if cam will
-                // be blocked from returning to default distance
-                // GOAL: prevent camera shaking
+                // be blocked from
 
-                Ray rear = new Ray(trans.position, -trans.forward);
-                
-                if (dist - radiusOfSatisfaction >= Vector3.Distance(trans.position, targetPos) && !Physics.Raycast(rear, out hit, 0.2f))
+                //OLD
+                //Ray rear = new Ray((trans.position+trans.forward), -trans.forward);
+                //NEW
+                Ray rear = new Ray(trans.position + trans.forward * 1, -trans.forward);
+
+                if (dist - radiusOfSatisfaction >= Vector3.Distance(trans.position, targetPos) && !Physics.Raycast(rear, out hit))
                 {
-                    trans.position = Vector3.MoveTowards(trans.position, targetPos, -dist * Time.deltaTime);
+                    //Debug.Log("Rear looking at :" + hit.collider.name);
+
+                    trans.position = Vector3.MoveTowards(trans.position, targetPos, -dist * Time.deltaTime * speed);
                 }
             }
             else
             {
-                //Debug.Log("Can NOT see player");
-                //Debug.Log("Looking at :" + hit.collider.name);
+                Debug.Log("Can NOT see player");
+                Debug.Log("Looking at :" + hit.collider.name);
                 // Moves camera towards player if view is obscured
-                trans.position = Vector3.MoveTowards(trans.position, targetPos, Time.deltaTime);
+                trans.position = Vector3.MoveTowards(trans.position, targetPos, Time.deltaTime * speed);
             }
         }
-
     }
 }

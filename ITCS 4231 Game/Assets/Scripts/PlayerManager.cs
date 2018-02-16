@@ -6,8 +6,9 @@ public class PlayerManager : MonoBehaviour {
 
     public Animator anim;
     public float lookSensitivity;
-    public Transform trans;
+    [SerializeField] private Transform trans;
     public Quaternion camDir;
+    public float turnSpeed = 5.0f;
 
     // Use this for initialization
     void Start() {
@@ -24,13 +25,27 @@ public class PlayerManager : MonoBehaviour {
         {
             anim.SetBool("Idle", true);
             anim.SetBool("Running", false);
+            anim.SetBool("RunningBack", false);
         }
 
         if (Input.GetKey("w"))
         {
             anim.SetBool("Running", true);
             anim.SetBool("Idle", false);
+            anim.SetBool("RunningBack", false);
+        }
+        
+        if (Input.GetKey("s"))
+        {
+            anim.SetBool("RunningBack", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Running", false);
         }
 
+        SetDirection();
+    }
+
+    void SetDirection()
+    {
     }
 }
