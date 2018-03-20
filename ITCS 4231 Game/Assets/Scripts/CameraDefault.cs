@@ -53,11 +53,8 @@ public class CameraDefault : MonoBehaviour {
 	{
 		 float deadZone = 0.01f; // mousewheel deadZone
 		 
-		 if (Input.GetMouseButton(0))
-		 {
-		     mouseX += Input.GetAxis("Mouse X") * X_MouseSensitivity;
-		     mouseY -= Input.GetAxis("Mouse Y") * Y_MouseSensitivity;
-		 }
+        mouseX += Input.GetAxis("Mouse X") * X_MouseSensitivity;
+        mouseY -= Input.GetAxis("Mouse Y") * Y_MouseSensitivity;
 		 
 		 // this is where the mouseY is limited - Helper script
 		 mouseY = ClampAngle(mouseY, Y_MinLimit, Y_MaxLimit);

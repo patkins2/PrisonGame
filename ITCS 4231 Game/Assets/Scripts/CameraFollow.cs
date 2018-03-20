@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-    public Transform trans;
     public Vector3 lookDir;
     public GameObject target;
     public float sensitivity = 5.0f;
@@ -17,7 +16,7 @@ public class CameraFollow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         targetPos = target.transform.position;
-        dist = Vector3.Distance(trans.position, targetPos);
+        dist = Vector3.Distance(transform.position, targetPos);
     }
 	
 	// Update is called once per frame
@@ -25,17 +24,17 @@ public class CameraFollow : MonoBehaviour {
         // DONE basic camera movement
         {
             //Rotates camera to look at player
-            lookDir = targetPos - trans.position;
-            trans.rotation = Quaternion.LookRotation(lookDir);
+            lookDir = targetPos - transform.position;
+            transform.rotation = Quaternion.LookRotation(lookDir);
 
             //Moves camera in orbit around player with mouse movement
-            trans.RotateAround(targetPos, Vector3.up, sensitivity * Input.GetAxis("Mouse X") * Time.deltaTime);
-            trans.RotateAround(targetPos, Vector3.right, sensitivity * Input.GetAxis("Mouse Y") * -1 * Time.deltaTime);
+            transform.RotateAround(targetPos, Vector3.up, sensitivity * Input.GetAxis("Mouse X") * Time.deltaTime);
+            transform.RotateAround(targetPos, Vector3.right, sensitivity * Input.GetAxis("Mouse Y") * -1 * Time.deltaTime);
 
             //Moves camera with the player
             if (targetPos != target.transform.position)
             {
-                trans.position += (target.transform.position - targetPos);
+                transform.position += (target.transform.position - targetPos);
                 targetPos = target.transform.position;
             }
         }
@@ -50,10 +49,10 @@ public class CameraFollow : MonoBehaviour {
         // Adjust camera distance to ensure player is in view
         RaycastHit hit;
         
-        Ray playerLOS = new Ray(trans.position, targetPos - trans.position);
-        Debug.DrawRay(trans.position, lookDir, Color.red);
+        Ray playerLOS = new Ray(transform.position, targetPos - transform.position);
+        Debug.DrawRay(transform.position, lookDir, Color.red);
 
-        Debug.DrawRay(trans.position + trans.forward, -trans.forward, Color.green);
+        Debug.DrawRay(transform.position + transform.forward, -transform.forward, Color.green);
 
         if (Physics.Raycast(playerLOS, out hit))
         {
@@ -71,13 +70,13 @@ public class CameraFollow : MonoBehaviour {
                 //OLD
                 //Ray rear = new Ray((trans.position+trans.forward), -trans.forward);
                 //NEW
-                Ray rear = new Ray(trans.position + trans.forward * 1, -trans.forward);
+                Ray rear = new Ray(transform.position + transform.forward * 1, -transform.forward);
 
-                if (dist - radiusOfSatisfaction >= Vector3.Distance(trans.position, targetPos) && !Physics.Raycast(rear, out hit))
+                if (dist - radiusOfSatisfaction >= Vector3.Distance(transform.position, targetPos) && !Physics.Raycast(rear, out hit))
                 {
                     //Debug.Log("Rear looking at :" + hit.collider.name);
 
-                    trans.position = Vector3.MoveTowards(trans.position, targetPos, -dist * Time.deltaTime * speed);
+                    transform.position = Vector3.MoveTowards(transform.position, targetPos, -dist * Time.deltaTime * speed);
                 }
             }
             else
@@ -85,7 +84,7 @@ public class CameraFollow : MonoBehaviour {
                 Debug.Log("Can NOT see player");
                 Debug.Log("Looking at :" + hit.collider.name);
                 // Moves camera towards player if view is obscured
-                trans.position = Vector3.MoveTowards(trans.position, targetPos, Time.deltaTime * speed);
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
             }
         }
     }
