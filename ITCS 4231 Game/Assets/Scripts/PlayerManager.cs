@@ -7,12 +7,14 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private Animator anim;
     [SerializeField] private float lookSensitivity;
     [SerializeField] private Transform cam;
+    private AudioClip footstep;
+    AudioSource audioSource;
     //[SerializeField] private float turnSpeed = 5.0f;
     //[SerializeField] private Transform camTarget;
 
     // Use this for initialization
     void Start() {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,9 +40,17 @@ public class PlayerManager : MonoBehaviour {
         {
             anim.SetInteger(HashIDs.self.movementTypeInt, (int)MovementType.forward);
             print("Movement: " + MovementType.forward);
+            playFootStep();
         }
 
         SetDirection();
+    }
+
+    void playFootStep()
+    {
+        audioSource = footstep[Random.Range(0, footstep.Length()];
+        audioSource.volume = 0.3f;
+        audioSource.Play();
     }
 
     void SetDirection()

@@ -17,6 +17,7 @@ public class GuardManager : MonoBehaviour {
     private Vector3 targetTran;
     public int maxRange;
     public int minRange;
+    bool chase;
 
     // Use this for initialization
     void Start () {
@@ -24,7 +25,7 @@ public class GuardManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         anim = gameObject.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        footstep = AudioClip.Equals(footstep_concrete_1);
+        //footstep = AudioClip.Equals(footstep_concrete_1);
 
         target = GameObject.FindWithTag("Player");
         targetTran = target.transform.position;
@@ -53,11 +54,14 @@ public class GuardManager : MonoBehaviour {
     void Update () {
 
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
             GotoNextPoint();
-        if ((Vector3.Distance(transform.position, target.transform.position) < maxRange) && (Vector3.Distance(transform.position, target.transform.position) > minRange) && )
+        }
+        if ((Vector3.Distance(transform.position, target.transform.position) < maxRange) && (Vector3.Distance(transform.position, target.transform.position) > minRange)) //&& )
         {
             transform.LookAt(targetTran);
             transform.Translate(Vector3.forward * Time.deltaTime);
+            chase = true;
         }
 
     }
