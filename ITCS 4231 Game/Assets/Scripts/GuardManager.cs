@@ -55,9 +55,9 @@ public class GuardManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        transform.LookAt(Player);
+        //transform.LookAt(Player);
 
-        if (Vector3.Distance(transform.position, Player.position) >= minRange)
+        if (Vector3.Distance(transform.position, Player.position) >= minRange && Vector3.Distance(transform.position, Player.position) <= maxRange)
         {
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
@@ -66,10 +66,10 @@ public class GuardManager : MonoBehaviour {
 
 
 
-            if (Vector3.Distance(transform.position, Player.position) <= maxRange)
+            /*if (Vector3.Distance(transform.position, Player.position) <= maxRange)
             {
                 //Here Call any function U want Like Shoot at here or something
-            }
+            }*/
 
         }
     }
