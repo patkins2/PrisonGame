@@ -42,8 +42,14 @@ public class PlayerManager : MonoBehaviour {
             print("Movement: " + MovementType.forward);
             playFootStep();
         }
+        if(zmove < 0)
+        {
+            anim.SetInteger(HashIDs.self.movementTypeInt, (int)MovementType.backward);
+            print("Movement: " + MovementType.backward);
+            playFootStep();
+        }
 
-        SetDirection();
+        //SetDirection();
     }
 
     void playFootStep()
@@ -53,7 +59,7 @@ public class PlayerManager : MonoBehaviour {
         audioSource.Play();
     }
 
-    void SetDirection()
+    public void SetDirection()
     {
         //Vector3 towards = new Vector3(0f, cam.rotation.y, 0f).normalized;
         //towards = Quaternion.Euler(towards.x, towards.y, towards.z);

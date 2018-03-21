@@ -21757,7 +21757,7 @@ GameObject:
   - component: {fileID: 443230367}
   - component: {fileID: 443230366}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Camera Target
   m_TagString: CameraTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41515,7 +41515,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.14
+      value: 4.709
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41593,6 +41593,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -0.283
       objectReference: {fileID: 0}
+    - target: {fileID: 13700006, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 194a8e2f6b2c9474ca67d01b0cd1f5cd, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
   m_IsPrefabParent: 0
@@ -59388,15 +59392,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1215017681}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed8c99d9552ef84689c55f411f2f0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetLookAt: {fileID: 1509489351}
+  TargetLookAt: {fileID: 443230365}
   Distance: 0
-  DistanceMin: 3
-  DistanceMax: 10
+  DistanceMin: 1.5
+  DistanceMax: 3
   X_MouseSensitivity: 5
   Y_MouseSensitivity: 5
   MouseWheelSensitivity: 5
@@ -59406,6 +59410,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 5, z: 0}
   X_Smooth: 0.05
   Y_Smooth: 0.1
+  player: {fileID: 1509489349}
 --- !u!1001 &1219612582
 Prefab:
   m_ObjectHideFlags: 0
@@ -62780,6 +62785,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   X_Smooth: 0.05
   Y_Smooth: 0.1
+  player: {fileID: 0}
 --- !u!1001 &1283768540
 Prefab:
   m_ObjectHideFlags: 0
@@ -77604,7 +77610,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509489348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5fce89b49e07443bf65bc50bef7888, type: 3}
+  m_Script: {fileID: 11500000, guid: cefd7c6398eeb724faed51ffbc99b678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1509489350}
@@ -83349,6 +83355,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   X_Smooth: 0.05
   Y_Smooth: 0.1
+  player: {fileID: 0}
 --- !u!1 &1574096718
 GameObject:
   m_ObjectHideFlags: 0
@@ -89668,16 +89675,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742212473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899181ef2657f754091d427c356178ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bb7710e5bc43b040bc9c29db45207c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1742212474}
   points: []
   Player: {fileID: 1509489351}
-  footstep: {fileID: 8300000, guid: 20d2d7095a3b13c43baf263091e3a359, type: 3}
+  footstep: {fileID: 0}
   target: {fileID: 1509489348}
-  maxRange: 5
-  minRange: 1
+  maxRange: 10
+  minRange: 5
 --- !u!1 &1742345113
 GameObject:
   m_ObjectHideFlags: 0
