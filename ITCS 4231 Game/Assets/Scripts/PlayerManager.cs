@@ -62,6 +62,11 @@ public class PlayerManager : MonoBehaviour {
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.dive);
+        }
+
     }
 
    /* void playFootStep()
