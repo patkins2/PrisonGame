@@ -54,11 +54,11 @@ public class PlayerManager : MonoBehaviour {
 
     void playFootStep()
     {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         //audioSource = footstep[Random.Range(0, footstep.Length()];
-=======
-        audioSource = footstep[Random.Range(0, footstep.length);
->>>>>>> 55916f5deba8b87ec7fad2ba2831f4928f46e12c
+//=======
+        //audioSource = footstep[Random.Range(0, footstep.length);
+//>>>>>>> 55916f5deba8b87ec7fad2ba2831f4928f46e12c
         audioSource.volume = 0.3f;
         audioSource.Play();
     }

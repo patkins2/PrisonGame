@@ -18,7 +18,7 @@ public class GuardManager : MonoBehaviour {
     private Vector3 targetTran;
     public int maxRange = 10;
     public int minRange = 5;
-    int MoveSpeed = 4;
+    int MoveSpeed = 2;
     bool chase;
 
     // Use this for initialization

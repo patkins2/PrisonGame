@@ -43,6 +43,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: chase
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102660518027029192}
   m_Solo: 0
@@ -97,7 +100,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
@@ -143,7 +146,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102814929282342348}
-    m_Position: {x: 486.25, y: 253, z: 0}
+    m_Position: {x: 480, y: 252, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102660518027029192}
     m_Position: {x: 564, y: 120, z: 0}
