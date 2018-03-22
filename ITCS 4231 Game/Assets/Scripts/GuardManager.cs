@@ -7,6 +7,7 @@ public class GuardManager : MonoBehaviour {
 
     public Animator anim;
     public Transform[] points;
+    public Transform Player;
     private int destPoint = 0;
     private NavMeshAgent agent;
     public AudioClip footstep;
@@ -15,14 +16,15 @@ public class GuardManager : MonoBehaviour {
     public GameObject target;
     private int playerPosition;
     private Vector3 targetTran;
-    public int maxRange;
-    public int minRange;
+    public int maxRange = 10;
+    public int minRange = 5;
+    int MoveSpeed = 4;
     bool chase;
 
     // Use this for initialization
     void Start () {
 
-        audioSource = GetComponent<AudioSource>();
+        /*audioSource = GetComponent<AudioSource>();
         anim = gameObject.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         //footstep = AudioClip.Equals(footstep_concrete_1);
@@ -32,11 +34,11 @@ public class GuardManager : MonoBehaviour {
 
         agent.autoBraking = false;
 
-        GotoNextPoint();
+        //GotoNextPoint();*/
 
     }
 
-    void GotoNextPoint()
+    /*void GotoNextPoint()
     {
         // Returns if no points have been set up
         if (points.Length == 0)
@@ -48,21 +50,27 @@ public class GuardManager : MonoBehaviour {
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
         destPoint = (destPoint + 1) % points.Length;
-    }
+    }*/
 
     // Update is called once per frame
     void Update () {
 
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        {
-            GotoNextPoint();
-        }
-        if ((Vector3.Distance(transform.position, target.transform.position) < maxRange) && (Vector3.Distance(transform.position, target.transform.position) > minRange)) //&& )
-        {
-            transform.LookAt(targetTran);
-            transform.Translate(Vector3.forward * Time.deltaTime);
-            chase = true;
-        }
+        //transform.LookAt(Player);
 
+        if (Vector3.Distance(transform.position, Player.position) >= minRange && Vector3.Distance(transform.position, Player.position) <= maxRange)
+        {
+
+            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+            transform.LookAt(Player);
+            chase = true;
+
+
+
+            /*if (Vector3.Distance(transform.position, Player.position) <= maxRange)
+            {
+                //Here Call any function U want Like Shoot at here or something
+            }*/
+
+        }
     }
 }

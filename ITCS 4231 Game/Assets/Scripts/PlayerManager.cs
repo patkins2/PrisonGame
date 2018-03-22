@@ -42,18 +42,28 @@ public class PlayerManager : MonoBehaviour {
             print("Movement: " + MovementType.forward);
             playFootStep();
         }
+        if(zmove < 0)
+        {
+            anim.SetInteger(HashIDs.self.movementTypeInt, (int)MovementType.backward);
+            print("Movement: " + MovementType.backward);
+            playFootStep();
+        }
 
-        SetDirection();
+        //SetDirection();
     }
 
     void playFootStep()
     {
+<<<<<<< HEAD
         //audioSource = footstep[Random.Range(0, footstep.Length()];
+=======
+        audioSource = footstep[Random.Range(0, footstep.length);
+>>>>>>> 55916f5deba8b87ec7fad2ba2831f4928f46e12c
         audioSource.volume = 0.3f;
         audioSource.Play();
     }
 
-    void SetDirection()
+    public void SetDirection()
     {
         //Vector3 towards = new Vector3(0f, cam.rotation.y, 0f).normalized;
         //towards = Quaternion.Euler(towards.x, towards.y, towards.z);

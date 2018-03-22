@@ -25,6 +25,7 @@ public class CameraDefault : MonoBehaviour {
 	private float velY = 0.0f;
 	private float velZ = 0.0f;
 	private Vector3 position = Vector3.zero;
+    [SerializeField] private PlayerManager player;
 
 
 
@@ -46,6 +47,7 @@ public class CameraDefault : MonoBehaviour {
             CalculateDesiredPosition();
 
             UpdatePosition();
+        player.SetDirection();
 
     }
 
