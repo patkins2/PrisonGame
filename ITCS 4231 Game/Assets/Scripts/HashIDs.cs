@@ -6,7 +6,9 @@ public class HashIDs : MonoBehaviour {
  
     public static HashIDs self;
  
-    public int movementTypeInt;
+    public int playerMovementTypeInt;
+    public int guardMovementTypeInt;
+    public int playerStateInt;
  
     void Awake () {
  
@@ -24,7 +26,10 @@ public class HashIDs : MonoBehaviour {
     }
  
     void Start () {
-        movementTypeInt = Animator.StringToHash ("movementType");
+        playerMovementTypeInt = Animator.StringToHash ("playerMovementType");
+        playerStateInt = Animator.StringToHash("playerState");
+
+        guardMovementTypeInt = Animator.StringToHash("guardMovementType");
     }
  
 }

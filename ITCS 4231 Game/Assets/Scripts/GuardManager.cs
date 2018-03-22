@@ -19,7 +19,6 @@ public class GuardManager : MonoBehaviour {
     public int maxRange = 10;
     public int minRange = 5;
     int MoveSpeed = 2;
-    bool chase;
 
     // Use this for initialization
     void Start () {
@@ -36,6 +35,8 @@ public class GuardManager : MonoBehaviour {
 
         //GotoNextPoint();*/
 
+        //anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.idle);
+        //print("Guard Mvmt type: " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
     }
 
     /*void GotoNextPoint()
@@ -59,18 +60,20 @@ public class GuardManager : MonoBehaviour {
 
         if (Vector3.Distance(transform.position, Player.position) >= minRange && Vector3.Distance(transform.position, Player.position) <= maxRange)
         {
-
+            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.chase);
+            //print("Guard Mvmt type: " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             transform.LookAt(Player);
-            chase = true;
-
-
 
             /*if (Vector3.Distance(transform.position, Player.position) <= maxRange)
             {
                 //Here Call any function U want Like Shoot at here or something
             }*/
 
+        }
+        else
+        {
+            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.idle);
         }
     }
 }

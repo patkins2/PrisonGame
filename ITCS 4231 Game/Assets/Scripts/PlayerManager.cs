@@ -7,14 +7,15 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private Animator anim;
     [SerializeField] private float lookSensitivity;
     [SerializeField] private Transform cam;
-    private AudioClip footstep;
-    AudioSource audioSource;
+    //private AudioClip footstep;
+    //AudioSource audioSource;
     //[SerializeField] private float turnSpeed = 5.0f;
     //[SerializeField] private Transform camTarget;
 
     // Use this for initialization
     void Start() {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
+        anim.SetInteger(HashIDs.self.playerStateInt, (int)PlayerState.standing);
     }
 
     // Update is called once per frame
@@ -28,31 +29,42 @@ public class PlayerManager : MonoBehaviour {
         //print("xmove = " + xmove);
         //print("zmove = " + zmove);
         //print("Movement forward : " + (int)MovementType.idle);
-        //print("movement int : " + HashIDs.self.movementTypeInt);
+        
 
         if(xmove == 0 && zmove == 0)
         {
             // Set moveType to 0 to stay in idle animation
-            anim.SetInteger(HashIDs.self.movementTypeInt, (int)MovementType.idle);
-            print("Movement: " + MovementType.idle);
+            anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.idle);
+            //print("Movement: " + playerMovementTypeInt.idle);
         }
         if (zmove > 0)
         {
-            anim.SetInteger(HashIDs.self.movementTypeInt, (int)MovementType.forward);
-            print("Movement: " + MovementType.forward);
-            playFootStep();
+            anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.forward);
+            //print("Movement: " + playerMovementTypeInt.forward);
+            //playFootStep();
         }
         if(zmove < 0)
         {
-            anim.SetInteger(HashIDs.self.movementTypeInt, (int)MovementType.backward);
-            print("Movement: " + MovementType.backward);
-            playFootStep();
+            anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.backward);
+            //print("Movement: " + playerMovementTypeInt.backward);
+            //playFootStep();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            print("State int : " + anim.GetInteger(HashIDs.self.playerStateInt));
+            if (anim.GetInteger(HashIDs.self.playerStateInt) == 0) {
+                print("time to crouch!");
+                anim.SetInteger(HashIDs.self.playerStateInt, (int)PlayerState.crouched);
+            }
+            else {
+                print("Standing up!");
+                anim.SetInteger(HashIDs.self.playerStateInt, (int)PlayerState.standing);
+            }
         }
 
-        //SetDirection();
     }
 
-    void playFootStep()
+   /* void playFootStep()
     {
 //<<<<<<< HEAD
         //audioSource = footstep[Random.Range(0, footstep.Length()];
@@ -61,7 +73,7 @@ public class PlayerManager : MonoBehaviour {
 //>>>>>>> 55916f5deba8b87ec7fad2ba2831f4928f46e12c
         audioSource.volume = 0.3f;
         audioSource.Play();
-    }
+    }*/
 
     public void SetDirection()
     {
