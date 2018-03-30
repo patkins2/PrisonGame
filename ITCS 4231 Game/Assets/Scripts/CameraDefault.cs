@@ -87,11 +87,20 @@ public class CameraDefault : MonoBehaviour {
 
 	public void UpdatePosition()
 	{
+        print("Before Rounding");
 		 var posX = Mathf.SmoothDamp(position.x, desiredPosition.x, ref velX, X_Smooth);
 		 var posY = Mathf.SmoothDamp(position.y, desiredPosition.y, ref velY, Y_Smooth);
 		 var posZ = Mathf.SmoothDamp(position.z, desiredPosition.z, ref velZ, X_Smooth);
-        //Vector3.Lerp(transform.position, new Vector3(posX, posY, posZ), 1f);
-		 position = new Vector3(posX, posY, posZ);
+
+        print("x: " + posX + ", y: " + posY + ", z: " + posZ);
+
+        print("After Rounding");
+        posX = Mathf.Round(posX * 100f) / 100f;
+        posY = Mathf.Round(posY * 100f) / 100f;
+        posZ = Mathf.Round(posZ * 100f) / 100f;
+
+        print("x: " + posX + ", y: " + posY + ", z: " + posZ);
+        position = new Vector3(posX, posY, posZ);
 		 
 		 transform.position = position;
 		 

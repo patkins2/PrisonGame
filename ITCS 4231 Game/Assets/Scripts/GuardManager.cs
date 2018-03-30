@@ -73,7 +73,7 @@ public class GuardManager : MonoBehaviour {
         }
         else
         {
-            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.idle);
+            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.shoot);
         }
     }
 }
