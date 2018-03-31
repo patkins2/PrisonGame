@@ -23,7 +23,7 @@ public class GuardManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        audioSource = GetComponent<AudioSource>();
+        /*audioSource = GetComponent<AudioSource>();
         anim = gameObject.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         //footstep = AudioClip.Equals(footstep_concrete_1);
@@ -33,13 +33,13 @@ public class GuardManager : MonoBehaviour {
 
         agent.autoBraking = false;
 
-        GotoNextPoint();
+        //GotoNextPoint();*/
 
-        anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.idle);
-        print("Guard Mvmt type: " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
+        //anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.idle);
+        //print("Guard Mvmt type: " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
     }
 
-    void GotoNextPoint()
+    /*void GotoNextPoint()
     {
         // Returns if no points have been set up
         if (points.Length == 0)
@@ -51,16 +51,16 @@ public class GuardManager : MonoBehaviour {
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
         destPoint = (destPoint + 1) % points.Length;
-    }
+    }*/
 
     // Update is called once per frame
     void Update () {
 
-        transform.LookAt(Player);
+        //transform.LookAt(Player);
 
         if (Vector3.Distance(transform.position, Player.position) >= minRange && Vector3.Distance(transform.position, Player.position) <= maxRange)
         {
-            //anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.chase);
+            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.chase);
             //print("Guard Mvmt type: " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             transform.LookAt(Player);
@@ -73,11 +73,7 @@ public class GuardManager : MonoBehaviour {
         }
         else
         {
-<<<<<<< HEAD
-           // anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.shoot);
-=======
-            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.idle);
->>>>>>> parent of 5fb6dd1... Minor tweaks
+            anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.shoot);
         }
     }
 }
