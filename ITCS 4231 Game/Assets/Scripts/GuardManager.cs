@@ -8,7 +8,7 @@ public class GuardManager : MonoBehaviour {
     public Animator anim;
     public Transform[] points;
     public Transform Player;
-    private int destPoint = 0;
+    //private int destPoint = 0;
     private NavMeshAgent agent;
     public AudioClip footstep;
     AudioSource audioSource;
