@@ -21,7 +21,6 @@ public class PlayerManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        print("Movement type = " + HashIDs.self.playerMovementTypeInt);
         // TODO set forward running direction equal to direction camera is facing
 
         float xmove = Input.GetAxis("Horizontal");
@@ -32,27 +31,23 @@ public class PlayerManager : MonoBehaviour {
         //print("Movement forward : " + (int)MovementType.idle);
         
 
-        if(xmove == 0 && zmove == 0)        //Player is not moving
+        if(xmove == 0 && zmove == 0)
         {
             // Set moveType to 0 to stay in idle animation
             anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.idle);
             //print("Movement: " + playerMovementTypeInt.idle);
         }
-        if (zmove > 0)      //Moving forward
+        if (zmove > 0)
         {
             anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.forward);
+            //print("Movement: " + playerMovementTypeInt.forward);
+            //playFootStep();
         }
-        else if(zmove < 0)       //Moving backwards
+        if(zmove < 0)
         {
             anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.backward);
-        }
-        if (xmove > 0)
-        {
-            anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.right);
-        }
-        else if (xmove < 0)
-        {
-            anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.left);
+            //print("Movement: " + playerMovementTypeInt.backward);
+            //playFootStep();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
