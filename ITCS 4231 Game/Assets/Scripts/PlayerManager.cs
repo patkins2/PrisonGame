@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        print("Movement type = " + HashIDs.self.playerMovementTypeInt);
+        //print("Movement type = " + HashIDs.self.playerMovementTypeInt);
         // TODO set forward running direction equal to direction camera is facing
 
         float xmove = Input.GetAxis("Horizontal");
@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour {
         {
             anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.backward);
         }
-        if (xmove > 0)
+        else if (xmove > 0)
         {
             anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.right);
         }
