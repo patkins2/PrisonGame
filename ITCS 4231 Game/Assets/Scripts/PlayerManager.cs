@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         //audioSource = GetComponent<AudioSource>();
+        anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.idle);
         anim.SetInteger(HashIDs.self.playerStateInt, (int)PlayerState.standing);
     }
 
@@ -29,7 +30,7 @@ public class PlayerManager : MonoBehaviour {
 
         //print("xmove = " + xmove);
         //print("zmove = " + zmove);
-        //print("Movement forward : " + (int)MovementType.idle);
+        //print("state " + HashIDs.self.playerMovementTypeInt);
         
 
         if(xmove == 0 && zmove == 0)        //Player is not moving
@@ -54,14 +55,14 @@ public class PlayerManager : MonoBehaviour {
         {
             anim.SetInteger(HashIDs.self.playerMovementTypeInt, (int)PlayerMovementType.left);
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C))
         {
             print("State int : " + anim.GetInteger(HashIDs.self.playerStateInt));
             if (anim.GetInteger(HashIDs.self.playerStateInt) == 0) {
                 print("time to crouch!");
                 anim.SetInteger(HashIDs.self.playerStateInt, (int)PlayerState.crouched);
             }
-            else {
+            else if (anim.GetInteger(HashIDs.self.playerStateInt) == 1) {
                 print("Standing up!");
                 anim.SetInteger(HashIDs.self.playerStateInt, (int)PlayerState.standing);
             }
