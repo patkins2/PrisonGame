@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2970508, g: 0.24628142, b: 0.23225415, a: 1}
+  m_IndirectSpecularColor: {r: 0.29715562, g: 0.24628273, b: 0.23252651, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -183,4 +183,56 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e17cc7860ceea6e4ca4f7fcb699ca8ae, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1959149226
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -13.293993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.2054443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -47.58486
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472626884697176, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82490391711953344, guid: f6195bf623ade514890952b9dc69b8de,
+        type: 2}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82490391711953344, guid: f6195bf623ade514890952b9dc69b8de,
+        type: 2}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
   m_IsPrefabParent: 0

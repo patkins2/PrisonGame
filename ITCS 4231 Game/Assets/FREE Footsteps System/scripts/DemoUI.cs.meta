@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8211a5c9e9b550d48ae8baff54a05174
+timeCreated: 1452310056
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - topDownController: {instanceID: 0}
+  - topDownCamera: {instanceID: 0}
+  - firstPersonController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
