@@ -61,7 +61,7 @@ public class GuardManager : MonoBehaviour {
         if (Vector3.Distance(transform.position, Player.position) >= minRange && Vector3.Distance(transform.position, Player.position) <= maxRange)
         {
             anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.chase);
-            //print("Guard Mvmt type: " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
+            //print("chase " + anim.GetInteger(HashIDs.self.guardMovementTypeInt));
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             transform.LookAt(Player);
 
@@ -74,6 +74,7 @@ public class GuardManager : MonoBehaviour {
         else
         {
             anim.SetInteger(HashIDs.self.guardMovementTypeInt, (int)GuardMovementType.shoot);
+            //print("aim" + HashIDs.self.guardMovementTypeInt.ToString());
         }
     }
 }

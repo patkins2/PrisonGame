@@ -22,11 +22,8 @@ public class HashIDs : MonoBehaviour {
              
             Destroy (gameObject);
         }
- 
-    }
- 
-    void Start () {
-        playerMovementTypeInt = Animator.StringToHash ("playerMovementType");
+
+        playerMovementTypeInt = Animator.StringToHash("playerMovementType");
         playerStateInt = Animator.StringToHash("playerState");
 
         guardMovementTypeInt = Animator.StringToHash("guardMovementType");
