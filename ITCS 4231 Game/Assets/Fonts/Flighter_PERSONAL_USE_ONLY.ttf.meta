@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3f6a6983335e1de45bbbf626ad91b2c5
+timeCreated: 1521675521
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Flighter PERSONAL USE ONLY
+  fontNames:
+  - Flighter PERSONAL USE ONLY
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
