@@ -12511,6 +12511,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &254370250
 GameObject:
   m_ObjectHideFlags: 0
@@ -12587,6 +12588,8 @@ Transform:
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1 &254685292
@@ -22345,6 +22348,7 @@ Transform:
   m_PrefabParentObject: {fileID: 4322633355728346, guid: f6195bf623ade514890952b9dc69b8de,
     type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_PrefabInternal: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -22369,6 +22373,9 @@ Transform:
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_PrefabInternal: {fileID: 817092543}
+>>>>>>> parent of cf6ef35... more player features
 =======
   m_PrefabInternal: {fileID: 817092543}
 >>>>>>> parent of cf6ef35... more player features
@@ -42903,6 +42910,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &817166604
 GameObject:
   m_ObjectHideFlags: 0
@@ -42939,6 +42947,8 @@ Transform:
 =======
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
 =======
+=======
+>>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &817092543
 Prefab:
   m_ObjectHideFlags: 0
@@ -42991,6 +43001,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6195bf623ade514890952b9dc69b8de, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
+>>>>>>> parent of cf6ef35... more player features
+=======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1 &817404230
 GameObject:
@@ -51486,6 +51499,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1013717350
 GameObject:
   m_ObjectHideFlags: 0
@@ -51593,6 +51607,8 @@ Transform:
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &1021880368
@@ -69271,6 +69287,7 @@ MeshFilter:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1357957820
 GameObject:
   m_ObjectHideFlags: 0
@@ -69350,6 +69367,8 @@ Transform:
 =======
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &1360808650
@@ -71089,6 +71108,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1393165581
 GameObject:
   m_ObjectHideFlags: 0
@@ -71165,6 +71185,8 @@ Transform:
 =======
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &1397759876
@@ -79135,6 +79157,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1490186811
 GameObject:
   m_ObjectHideFlags: 0
@@ -79212,6 +79235,8 @@ Transform:
 =======
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &1490366498
@@ -80707,6 +80732,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1883300315269906, guid: f6195bf623ade514890952b9dc69b8de,
     type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
@@ -80745,11 +80771,16 @@ GameObject:
   m_PrefabInternal: {fileID: 817092543}
 --- !u!114 &1509489349 stripped
 >>>>>>> parent of cf6ef35... more player features
+=======
+  m_PrefabInternal: {fileID: 817092543}
+--- !u!114 &1509489349 stripped
+>>>>>>> parent of cf6ef35... more player features
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114492713911259378, guid: f6195bf623ade514890952b9dc69b8de,
     type: 2}
   m_PrefabInternal: {fileID: 817092543}
   m_Script: {fileID: 11500000, guid: cefd7c6398eeb724faed51ffbc99b678, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Name: 
   m_EditorClassIdentifier: 
@@ -81024,6 +81055,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &1509671640
@@ -99058,6 +99091,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1889660518
 GameObject:
   m_ObjectHideFlags: 0
@@ -99275,6 +99309,8 @@ SkinnedMeshRenderer:
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
 =======
 >>>>>>> cf6ef35394de88d40d1e685a83f31a1ba76591b6
+=======
+>>>>>>> parent of cf6ef35... more player features
 =======
 >>>>>>> parent of cf6ef35... more player features
 --- !u!1001 &1893578087
