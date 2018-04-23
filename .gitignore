@@ -64,3 +64,16 @@ sysinfo.txt
 *.apk
 
 *.unitypackage
+ITCS 4231 Game/Assets/Animations/Player/Crouch Idle.fbx.meta
+ITCS 4231 Game/Assets/Animations/Player/Crouch Idle.fbx.meta
+ITCS 4231 Game/Assets/Animator Controllers/PlayerController.controller
+ITCS 4231 Game/Assets/Models/Terrain/Ground.asset
+ITCS 4231 Game/Assets/Scenes/game.unity
+ITCS 4231 Game/Assets/Prefabs/Actors/Player.prefab.meta
+ITCS 4231 Game/Assets/Prefabs/Actors/Player.prefab
+ITCS 4231 Game/Assets/Prefabs/Actors/Guard_Rifle.prefab.meta
+ITCS 4231 Game/Assets/Prefabs/Actors/Guard_Rifle.prefab
+ITCS 4231 Game/Assets/Prefabs/Actors/Guard_Pistol.prefab.meta
+ITCS 4231 Game/Assets/Prefabs/Actors/Guard_Pistol.prefab
+ITCS 4231 Game/Assets/Scripts/HashIDs.cs
+ITCS 4231 Game/Assets/Scripts/PlayerManager.cs
