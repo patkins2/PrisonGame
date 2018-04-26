@@ -1,10 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Experimental.UIElements.StyleEnums;
-using UnityEditor.Animations;
-using UnityEditor;
 
 [DisallowMultipleComponent]
 [RequireComponent (typeof(Animation))]
