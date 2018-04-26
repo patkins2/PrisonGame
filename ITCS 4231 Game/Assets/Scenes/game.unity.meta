@@ -1,10 +1,6 @@
 fileFormatVersion: 2
 guid: 166c62dc9ee2d044c859fc8cff6ac434
-<<<<<<< HEAD
-timeCreated: 1524678569
-=======
 timeCreated: 1521714822
->>>>>>> parent of 29f7981... Revert "Revert "Revert "got rid of old guards"""
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
