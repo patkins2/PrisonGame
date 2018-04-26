@@ -11,7 +11,6 @@ public class DoorController : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         doorAnim = GetComponent<Animator>();
-        print("door" + transform.position);
         hinge = doorAnim.runtimeAnimatorController.name;
     }
 
