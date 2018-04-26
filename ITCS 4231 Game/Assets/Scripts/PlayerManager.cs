@@ -21,6 +21,8 @@ public class PlayerManager : MonoBehaviour {
 
         float xmove = Input.GetAxis("Horizontal");
         float zmove = Input.GetAxis("Vertical");
+        //float heloexit = 
+        
 
         //print("player" + transform.position);
         //Player is not moving
@@ -83,5 +85,17 @@ public class PlayerManager : MonoBehaviour {
         Vector3 towards = transform.eulerAngles;
         towards.y = Camera.main.transform.eulerAngles.y;
         transform.eulerAngles = towards;
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.name == "Helicopter")
+        {
+            Application.Quit();
+        }
+        if (hit.gameObject.name == "AIEnemy3" || hit.gameObject.name == "AIEnemy3 (1)" || hit.gameObject.name == "AIEnemy3 (2)")
+        {
+            Application.Quit();
+        }
     }
 }
